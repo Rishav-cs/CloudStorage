@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Redirect</title>
+</head>
+<body>
+    <h1>Test Redirect</h1>
+    <button id="redirectBtn">Redirect to Dashboard</button>
+    <script>document.getElementById('redirectBtn').onclick = function () {
+  console.log('Attempting to redirect to dashboard.html');
+  console.log('Current URL before redirect:', window.location.href);
+  window.location.href = 'dashboard.html';
+  console.log('Redirect command executed');
+  setTimeout(function () {
+    console.log('Redirect did not occur after 2 seconds, showing manual navigation option');
+    document.body.innerHTML += '<p style="text-align: center; color: red;">Redirect failed. <a href="dashboard.html">Click here to go to the dashboard.</a></p>';
+  }, 2000);
+};</script>
+</body>
+</html>
